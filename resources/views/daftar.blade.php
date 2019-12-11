@@ -25,13 +25,13 @@
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Hi.Klinik</a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	        <span class="oi oi-menu"></span> 
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
 	         
-	          <li class="nav-item cta mr-md-2"><a href="appointment.html" class="nav-link">Appointment</a></li>
+	          <li class="nav-item cta mr-md-2"></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -41,7 +41,7 @@
     <div class="col-md-9 d-flex" style="margin-top:10%">
 	        	<div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
 		        	<form action="#" class="appointment-form ftco-animate">
-		        		<h3>Appointment</h3>
+		        		<h3>Daftar</h3>
 		    				<div class="">
 			    				<div class="form-group">
 			    					<input type="text" class="form-control" placeholder="First Name">

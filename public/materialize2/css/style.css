@@ -1,0 +1,86 @@
+*{
+  font-family: Lato;
+}
+.content-tab{
+  margin-top: 15px;
+}
+.input-field input[type]:focus + label,
+.input-field input[type=number]:focus + label,
+.input-field input[type=range]:focus + label,
+.input-field textarea:focus + label{
+  color: #29B6F6 !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,
+.input-field input[type=number]:focus,
+.input-field textarea:focus{
+  border-bottom: 1px solid #29B6F6 !important;
+  box-shadow: 0 1px 0 0 #29B6F6 !important
+}
+body{
+  background: #ffffff;
+}
+.panel-head{
+  background: #29B6F6
+}
+.panel-table{
+  overflow-x: auto
+}
+.no-margin{
+  margin: 0px !important
+}
+thead > tr > th{
+  text-align: center;
+}
+.table-container > table{
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.table-container{
+  overflow-x: auto;
+  /*max-width: 100%;*/
+}
+.table-container > table > tbody > tr > td{
+  border-left: 1px solid #ddd;
+}
+.table-container > table > tbody > tr:hover{
+  cursor: pointer;
+}
+.row > div > button{
+  margin-bottom: 10px;
+}
+.dataTables_length{
+  display: none;
+}
+.dataTables_wrapper .dataTables_filter{
+  float: none !important;
+  text-align: left !important;
+}
+.dataTables_wrapper .dataTables_filter input{
+    margin: 0px !important;
+}
+#logout:hover{
+  background-color: #f44336;
+}
+@media only screen and (min-width: 601px) {
+  #btn-print{
+    margin-top: 5px;
+  }
+  .no-margin-on-med-and-up{
+    margin: 0px !important
+  }
+  .right-on-med-and-up{
+    float: right !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .center-on-small-only{
+    text-align: center !important;
+  }
+}
+.card-fa-icon{
+  padding-top: 30px;
+}
+#header-print{
+  display: none !important;
+}

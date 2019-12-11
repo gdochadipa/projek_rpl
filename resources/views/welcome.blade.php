@@ -2,26 +2,7 @@
 
 
 @section('kontent')
-	<div class="py-1 bg-black top">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
-	    		<div class="col-lg-12 d-block">
-		    		<div class="row d-flex">
-		    			<div class="col-md pr-4 d-flex topper align-items-center">
-					
-						    
-					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    
-					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a><a href="#">Sign In</a></p>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-		  </div>
-    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Hi.Klinik</a>
@@ -33,9 +14,8 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>Tentang</span></a></li>
-	          <li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
 	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
-	          <li class="nav-item cta mr-md-2"><a href="appointment.html" class="nav-link">Ambil Antrian</a></li>
+	          <li class="nav-item cta mr-md-2"><a href="/daftar" class="nav-link">Ambil Antrian</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -104,7 +84,7 @@
 			              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-doctor"></span></div>
 			              <div class="media-body pl-md-4">
 			                <h3 class="heading mb-3">Qualified Doctors</h3>
-			                <p>Kami memasitikan anda akan dilayani oleh instansi yang profesional dan berkualifikasi profesional</p>
+			                <p>Kami memasitikan anda akan dilayani oleh instansi yang memiliki dokter profesional dan berkualifikasi profesional</p>
 			              </div>
 			            </div>      
 			          </div>

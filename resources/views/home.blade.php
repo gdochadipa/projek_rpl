@@ -1,26 +1,23 @@
-@extends('home_master')
+@extends('layouts.app')
 
-@section('kontent')
-     <!-- Weather widget-->
-                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                    <div class="mdl-card mdl-shadow--2dp weather">
-                        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">Now</h2>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-                            <div class="mdl-layout-spacer"></div>
-                            <div class="mdl-card__subtitle-text">
-                                <i class="material-icons">room</i>
-                                Minsk, Belarus
-                            </div>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
                         </div>
-                        <div class="mdl-card__supporting-text mdl-card--expand">
-                            <p class="weather-temperature">-11<sup>&deg;</sup></p>
+                    @endif
 
-                            <p class="weather-description">
-                                Cloudy and snow
-                            </p>
-                        </div>
-                    </div>
+                    You are logged in!
                 </div>
-                
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
