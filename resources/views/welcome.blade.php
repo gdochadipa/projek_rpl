@@ -1,6 +1,7 @@
 @extends('master')
 
 
+
 @section('kontent')
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -15,7 +16,7 @@
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>Tentang</span></a></li>
 	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
-	          <li class="nav-item cta mr-md-2"><a href="/daftar" class="nav-link">Ambil Antrian</a></li>
+	          <li class="nav-item cta mr-md-2"><a href="/login/pasien" class="nav-link">Ambil Antrian</a></li>
 	        </ul>
 	      </div>
 	    </div>

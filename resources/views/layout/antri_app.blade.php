@@ -10,22 +10,22 @@
       <title>Hi.Klinik</title>
 
       <!-- Bootstrap -->
-      <link href="assets/css/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/css/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <link href="../assets/css/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../assets/css/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
       <!-- Font Awesome -->
-      <link href="assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href="../assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
       <!-- Custom Theme Style -->
-      <link href="assets/css/build/css/custom.min.css" rel="stylesheet">
-      <script src="assets/ckeditor/ckeditor.js"></script>
-      <script src="assets/css/vendors/jquery/dist/jquery.min.js"></script>
-      <script src="assets/js/jquery/dist/jquery.min.js"></script>
+      <link href="../assets/css/build/css/custom.min.css" rel="stylesheet">
+      <script src="../assets/ckeditor/ckeditor.js"></script>
+      <script src="../assets/css/vendors/jquery/dist/jquery.min.js"></script>
+      <script src="../assets/js/jquery/dist/jquery.min.js"></script>
       <!-- Bootstrap -->
 
-      <script src="assets/css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="../assets/css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
       <!-- Custom Theme Scripts -->
-      <script src="assets/css/build/js/custom.min.js"></script>
-      <script src="assets/js/jquery.dataTables.js">
+      <script src="../assets/css/build/js/custom.min.js"></script>
+      <script src="../assets/js/jquery.dataTables.js">
 
       </script>
     </head>
@@ -37,7 +37,7 @@
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
                 <center>
-                <a href="index.php" class="site_title"> <img src="../assets/img/admin/SA.png" alt="" /> </a>
+                <a href="index.php" class="site_title"> <img src="../../assets/img/admin/SA.png" alt="" /> </a>
               </center>
               </div>
 
@@ -49,7 +49,7 @@
 
                 </div>
                 <div class="profile_info">
-                  <span>Welcome, @yield('nama')</span>
+                  <span>Welcome, </span>
                   <br>
                   <span></span>
 
@@ -83,7 +83,7 @@
                                 </li>
                                 <li><a href="../profile"><i class="fa fa-user"></i> Profile</a>
                                 </ul>
-                                  
+                                 
                                 </li>
                                   <ul class="nav child_menu" style="">
                                     <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>

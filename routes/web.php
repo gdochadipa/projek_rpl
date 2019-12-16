@@ -19,24 +19,31 @@ Route::get('daftar', function () {
     return view('main.cari');
 });
 
-Route::get('main', function () {
-    return view('main.main');
-});
-Route::get('booking', function () {
-    return view('main.booking');
-});
 
-Route::get('antri', function () {
-    return view('main.antri');
-});
 
 Route::get('home', function () {
     return view('home');
 });
 
-Route::get('pencarian', 'AntrianController@searchHospital')->name('pencarian');
 
 
-Auth::routes();
+Route::get('antri/action', 'AntrianController@action')->name('antri.action');
+
+Route::get('antri/{id}','AntrianController@pilih_poli')->name('antri.pilih_poli');
+Route::get('poli/{id}','AntrianController@ambil')->name('antri.ambil');
+Route::get('ambil/{id}','AntrianController@ambil_antri')->name('antri.ambil_antri');
+Route::get('create','AntrianController@create')->name('antri.create');
+Route::get('main', 'AntrianController@main')->name("antri.main");
+Route::get('booking','AntrianController@booking')->name("antri.booking");
+
+Route::get('riwayat','AntrianController@riwayat')->name("antri.riwayat");
+
+Route::get('antri','AntrianController@antri');
+
+
+Route::get('/login/pasien','LoginController@index');
+Route::post('/login/check','LoginController@check');
+Route::get('/logout','LoginController@logout');
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.antri_app')
 @section('nama')
 
 <?php 
@@ -11,7 +11,7 @@ $pasien = $request->session()->get('pasien');
 @section('kontent')
 
  <!-- NProgress -->
-    <link href="assets/js/nprogress/nprogress.css" rel="stylesheet">
+<link href="{{URL::asset('../assets/js/nprogress/nprogress.css')}}" rel="stylesheet">
 
 <div class="right_col" role="main">
 
@@ -29,7 +29,7 @@ $pasien = $request->session()->get('pasien');
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Booking Antrian </h2>
+                    <h2>Pilih Poli </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -59,14 +59,7 @@ $pasien = $request->session()->get('pasien');
 
                             <form class="form-horizontal ">
 
-                          <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cari <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="search" required="required" class="form-control col-md-7 col-xs-12">
-                            </div>
-
-                          </div>
+                          
                         </form>
 
                         <div class="row">
@@ -74,15 +67,20 @@ $pasien = $request->session()->get('pasien');
                              <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
-                                <th>Nama Rumah Sakit</th>
-                                <th>Alamat</th>
+                                <th>Nama Poli</th>
                                 <th>Jumlah Antrian</th>
                                 <th>Aksi</th>
                               </tr>
                             </thead>
                            
                           <tbody>
-
+                            @foreach ($poli as $item)
+                                <tr>
+                                <td>{{$item->nama_poli}}</td>
+                                <td></td>
+                                <td><a href="/poli/{{$item->id}}" class="buttonNext btn btn-success">Next</a></td>
+                                </tr>
+                            @endforeach
                           </tbody>
                           </table>
                           </div>
@@ -116,27 +114,5 @@ $pasien = $request->session()->get('pasien');
     <!-- jQuery Smart Wizard -->
     {{-- <script src="assets/js/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script> --}}
 
-    <script >
-     $(document).ready(function () {
-       fetch_customer_data();
-
-       function fetch_customer_data(query='') {
-         $.ajax({
-          url:"{{route('antri.action')}}",
-          method:'GET',
-          data:{query:query},
-          dataType:'json',
-          success:function(data){
-            $('tbody').html(data.table_data);
-            
-          }
-         });
-       }
-
-       $(document).on('keyup','#search',function () {
-         var query = $(this).val();
-         fetch_customer_data(query);
-       })
-     });
-    </script>
+   
 @endsection

@@ -1,5 +1,14 @@
 @extends('layout.app')
 
+@section('nama')
+
+<?php 
+$pasien = $request->session()->get('pasien');
+?>
+{{ $pasien[0]->nama }}
+	
+@endsection
+
 @section('kontent')
 
 <div class="right_col" role="main">

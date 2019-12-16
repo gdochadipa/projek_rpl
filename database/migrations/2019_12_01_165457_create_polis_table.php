@@ -16,7 +16,8 @@ class CreatePolisTable extends Migration
         Schema::create('polis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_rm_sakit')->unsigned();
-            $table->string('nama_poli');
+            $table->string('nama_poli',50);
+            $table->integer('harga_periksa');
             $table->timestamps();
         });
     }

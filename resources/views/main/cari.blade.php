@@ -1,4 +1,12 @@
 @extends('layout.app')
+@section('nama')
+
+<?php 
+$pasien = $request->session()->get('pasien');
+?>
+{{ $pasien[0]->nama }}
+	
+@endsection
 
 @section('konten')
 <style media="screen">

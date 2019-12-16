@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\antrian;
 use App\rmh_sakit;
+use App\poli;
 use Illuminate\Http\Request;
+use DB;
 
 class AntrianController extends Controller
 {
@@ -18,22 +20,102 @@ class AntrianController extends Controller
         //
     }
 
-    public function searchHospital(Request $request)
+    public function action(Request $request)
     {
-        $data = rmh_sakit::select("name")
-                ->where("nm_rmh_sakit","LIKE","%{$request->query}%")
-                ->get();
-                return response()->json($data);
+       if($request->ajax()){
+            $output = '';
+            $query = $request->get('query');
+            if ($query != '') {
+                $data = DB::table('rmh_sakits')
+                ->where('nm_rmh_sakit', 'like', '%'.$query.'%')->get();
+            }else{
+                $data = null;
+            }
+
+            $total_row = $data->count();
+           
+            if($total_row > 0){
+                foreach ($data as $row) {
+                    $output='
+                     <tr>
+                      <td>'.$row->nm_rmh_sakit.'</td>
+                    <td>'.$row->alamat.'</td>
+                    <td>'.$row->deskripsi.'</td>
+                    <td>   <a href="antri/'.$row->id.'"  class="buttonNext btn btn-success">Next</a>
+
+                    </td>
+                    </tr>
+                    ';
+                }
+            }
+            else{
+                 $output = '
+                <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                </tr>
+                ';
+            }
+            $data=array( 
+                'table_data'  => $output,
+              'total_data'  => $total_row);
+
+              echo json_encode($data);
+       }
     }
+
+    public function pilih_poli(Request $request)
+    {
+        $poli = poli::select('id','nama_poli')->where('id_rm_sakit', '=', $request->id)->get();
+        //dd($poli);
+        return view('main.pilih_poli',compact('poli','request'));
+    }
+
+    public function ambil(Request $request)
+    {
+          
+        return view('main.ambil_antrian',compact('request'));
+    }
+
+    public function ambil_antri(Request $request, $id)
+    {
+        
+        return view('main.tambah_antri',compact('request'));
+    }
+
+    public function main(Request $request) {
+        
+    $pasien = $request->session()->get('pasien');
+      //  dd($pasien);
+    return view('main.main',compact('pasien'));
+    }
+
+    public  function antri(Request $request) {
+    return view('main.antri',compact('request'));
+    }
+
+    public function riwayat (Request $request) {
+    return view('main.riwayat',compact('request'));
+    }
+
+    public  function booking(Request $request) {
+    return view('main.booking',compact('request'));
+}
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
+    //    if( $request->session()->has('poli')){
+    //        $nama= $request->session()->get('nama');
+    //    }else{
+    //        $nama= 'Tidak ada data dalam session.';
+    //    }
+       return $nama;
     }
 
     /**
