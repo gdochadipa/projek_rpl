@@ -33,6 +33,7 @@ Route::get('antri/{id}','AntrianController@pilih_poli')->name('antri.pilih_poli'
 Route::get('poli/{id}','AntrianController@ambil')->name('antri.ambil');
 Route::get('ambil/{id}','AntrianController@ambil_antri')->name('antri.ambil_antri');
 Route::get('create','AntrianController@create')->name('antri.create');
+Route::post('create','AntrianController@store_antri')->name('antri.create');
 Route::get('main', 'AntrianController@main')->name("antri.main");
 Route::get('booking','AntrianController@booking')->name("antri.booking");
 

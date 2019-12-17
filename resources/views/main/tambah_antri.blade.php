@@ -48,9 +48,28 @@ $pasien = $request->session()->get('pasien');
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                    <form id="demo-form2" data-parsley-validate method="post" action="/" class="form-horizontal form-label-left">
+                      @csrf
                       <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Rumah Sakit</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          
+                        <input id="middle-name" disabled class="form-control col-md-7 col-xs-12" type="text" value="{{$data[0]->nm_rmh_sakit}}" >
+                        <input type="text" name="id_rm_sakit" hidden value="{{$data[0]->id_rm_sakit}}" >
+                      </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Poli<span class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="birthday" class=" form-control col-md-7  col-xs-12" value="{{$data[0]->nama_poli}}" disabled type="text">
+                        <input type="text" name="id_poli" value="{{$data[0]->id}}" hidden>
+                        </div>
+                      </div>
+                      
+
+                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Jenis Pembayaran<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -67,44 +86,20 @@ $pasien = $request->session()->get('pasien');
                           </select>
                         </div>
                       </div>
+
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pembayaran <span class="required"></span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                        <input id="birthday" class="date-picker form-control col-md-7  col-xs-12" value="{{$data[0]->harga_periksa}}" name="harga_periksa" disabled type="text">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name / Initial</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div id="gender" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="male"> &nbsp; Male &nbsp;
-                            </label>
-                            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                              <input type="radio" name="gender" value="female"> Female
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
-                        </div>
-                      </div>
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="button">Cancel</button>
-						  <button class="btn btn-primary" type="reset">Reset</button>
+					            	  
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>

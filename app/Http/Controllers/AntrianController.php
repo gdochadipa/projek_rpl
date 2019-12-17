@@ -78,8 +78,13 @@ class AntrianController extends Controller
 
     public function ambil_antri(Request $request, $id)
     {
-        
-        return view('main.tambah_antri',compact('request'));
+        $data = DB::table('polis')
+        ->join('rmh_sakits','rmh_sakits.id','=','polis.id_rm_sakit')
+        ->select('polis.id','polis.id_rm_sakit','polis.nama_poli','polis.harga_periksa','rmh_sakits.nm_rmh_sakit')
+        ->where('polis.id','=',$id)->get();
+       
+       // dd($data);
+        return view('main.tambah_antri',compact('request','id','data'));
     }
 
     public function main(Request $request) {
@@ -99,7 +104,12 @@ class AntrianController extends Controller
 
     public  function booking(Request $request) {
     return view('main.booking',compact('request'));
-}
+    }
+
+     public function store_antri(Request $request)
+    {
+        
+    }
 
 
     /**
