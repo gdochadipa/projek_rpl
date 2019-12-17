@@ -40,6 +40,10 @@ Route::get('riwayat','AntrianController@riwayat')->name("antri.riwayat");
 
 Route::get('antri','AntrianController@antri');
 
+Route::resource('admin','AdminController');
+
+Route::resource('rumahsakit','RmhSakitController');
+
 
 Route::get('/login/pasien','LoginController@index');
 Route::post('/login/check','LoginController@check');

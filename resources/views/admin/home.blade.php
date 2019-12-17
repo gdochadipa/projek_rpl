@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin.app')
 
 @section('kontent')
 
@@ -9,7 +9,7 @@
 
          <div class="col-lg-12">
               <h1 class="page-header">
-                  Dashboard Admin<small>Hi, Klinik</small>
+                  Dashboard Admin<small> Hi, Klinik</small>
               </h1>
               <ol class="breadcrumb">
                   <li class="active">
@@ -21,10 +21,10 @@
                   <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
                       <div class="tile-stats">
                           <div class="icon"><i class="fa fa-home"></i></div>
-                          <div class="count">0
+                          <div class="count">{{$jml = count($rmh_sakit)}}
                           </div>
-                          <h3>Tempat Olahraga</h3>
-                          <p>Jumlah tempat olahraga yang tersedia.</p>
+                          <h3>Rumah Sakit</h3>
+                          <p>Jumlah rumah sakit yang tersedia.</p>
                           
                       </div>
                   </div>
@@ -49,31 +49,54 @@
                       </div>
                   </div>
               </div>
-
+              
               <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Data Tempat Olahraga</h3>
+                            <h3 class="panel-title">Data Rumah Sakit</h3>
                         </div>
                         <div class="panel-body">
+                         
                           <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Kategori</th>
+                                <th>Alamat</th>
+                                <th>Deskripsi</th>
+                                <th>Kecamatan</th>
                               </tr>
                             </thead>
-                           
+                        
                           <tbody>
-                            <tr>
-                                <td colspan="5"> Data tidak ada</td>
+                            @if ($rmh_sakit->isEmpty())
+                              <tr>
+                                <td colspan="5">Data tidak ada</td>
                               </tr>
+                                
+                              @endif
+                            @foreach ($rmh_sakit as $item)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$item->nm_rmh_sakit}}</td>
+                                <td>{{$item->alamat}}</td>
+                                <td>{{$item->deskripsi}}</td>
+                                <td>{{$item->id_kecamatan}}</td>
+                            </tr>
+                              @if ($loop->iteration == 3)
+                                  break;
+                              @else
+                                  
+                              @endif
+                            @endforeach
+                            <tr>
+                              <td colspan="5">...</td>
+                            </tr>
                           </tbody>
                           </table>
                             <div class="text-right">
-                                <a href="#">Lihat Data Tempat Olahraga &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="/rumahsakit">Lanjutkan Lihat Data Rumah Sakit &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

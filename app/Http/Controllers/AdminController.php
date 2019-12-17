@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\admin;
 use App\rmh_sakit;
 use Illuminate\Http\Request;
 
-class RmhSakitController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class RmhSakitController extends Controller
     public function index()
     {
         $rmh_sakit = rmh_sakit::all();
-        return view('rumahsakit.home',compact('rmh_sakit'));
+        return view('admin.home',compact('rmh_sakit'));
     }
 
     /**
@@ -25,8 +26,7 @@ class RmhSakitController extends Controller
      */
     public function create()
     {
-        $rmh_sakit = rmh_sakit::all();
-        return view('rumahsakit.create',compact('rmh_sakit'));
+        //
     }
 
     /**
@@ -43,10 +43,10 @@ class RmhSakitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\rmh_sakit  $rmh_sakit
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(rmh_sakit $rmh_sakit)
+    public function show(admin $admin)
     {
         //
     }
@@ -54,10 +54,10 @@ class RmhSakitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\rmh_sakit  $rmh_sakit
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(rmh_sakit $rmh_sakit)
+    public function edit(admin $admin)
     {
         //
     }
@@ -66,10 +66,10 @@ class RmhSakitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\rmh_sakit  $rmh_sakit
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rmh_sakit $rmh_sakit)
+    public function update(Request $request, admin $admin)
     {
         //
     }
@@ -77,10 +77,10 @@ class RmhSakitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\rmh_sakit  $rmh_sakit
+     * @param  \App\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rmh_sakit $rmh_sakit)
+    public function destroy(admin $admin)
     {
         //
     }
