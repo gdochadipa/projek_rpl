@@ -3,7 +3,7 @@
 @section('nama')
 
 <?php 
-$pasien = $request ?? ''->session()->get('pasien');
+// $pasien = $request->session()->get('pasien');
 ?>
 {{ $pasien[0]->nama }}
 	
