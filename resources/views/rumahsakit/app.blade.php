@@ -10,13 +10,13 @@
       <title>Dashboard Admin</title>
 
       <!-- Bootstrap -->
-      <link href="assets/css/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/css/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <link href={{ asset('assets/css/vendors/bootstrap/dist/css/bootstrap.min.css') }} rel="stylesheet">
+      <link href={{ asset('assets/css/datatables/css/dataTables.bootstrap.css') }} rel="stylesheet">
       <!-- Font Awesome -->
-      <link href="assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href={{ asset('assets/css/vendors/font-awesome/css/font-awesome.min.css') }} rel="stylesheet">
       <!-- Custom Theme Style -->
-      <link href="assets/css/build/css/custom.min.css" rel="stylesheet">
-      <script src="assets/ckeditor/ckeditor.js"></script>
+      <link href={{ asset('assets/css/build/css/custom.min.css') }} rel="stylesheet">
+      <script src={{ asset('assets/ckeditor/ckeditor.js') }}></script>
     </head>
 
     <body class="nav-md">

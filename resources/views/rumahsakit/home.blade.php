@@ -62,7 +62,11 @@
                                 <td>{{$item->nm_rmh_sakit}}</td>
                                 <td>{{$item->alamat}}</td>
                                 <td>{{$item->deskripsi}}</td>
-                                <td>{{$item->id_kecamatan}}</td>
+                                <td>@foreach ($kecamatan as $kec)
+                                    @if($kec->id == $item->id_kecamatan)
+                                      {{$kec->nm_kec}} 
+                                    @endif
+                                @endforeach</td>
                                 <td>
                                   <span>
                                     <input type="button" value="Edit" onclick="location.href='/rumahsakit/{{$item->id}}/edit'" class="btn btn-primary col-sm-4">
