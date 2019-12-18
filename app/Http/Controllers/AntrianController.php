@@ -80,7 +80,7 @@ class AntrianController extends Controller
     {
         $data = DB::table('polis')
         ->join('rmh_sakits','rmh_sakits.id','=','polis.id_rm_sakit')
-        ->select('polis.id','polis.id_rm_sakit','polis.nama_poli','polis.harga_periksa','rmh_sakits.nm_rmh_sakit')
+        ->select('polis.id','polis.id_rm_sakit','polis.nama_poli','rmh_sakits.nm_rmh_sakit')
         ->where('polis.id','=',$id)->get();
        
        // dd($data);
@@ -108,7 +108,28 @@ class AntrianController extends Controller
 
      public function store_antri(Request $request)
     {
-        
+        $pasien=$request->session()->get('pasien');
+        $num_now=0;
+        $date_today = date("Y-m-d");
+        $id_pasien=$pasien[0]->id;
+        $get_id =  DB::select('select nomor_antrian from antrians where tgl_reservasi=CURRENT_DATE() order by nomor_antrian desc limit 1');
+        if(!is_null($get_id)){
+            $num_now=$get_id[0]->nomor_antrian+1;
+
+        }else{
+            $num_now=1;
+
+        }
+
+        $antrian = new antrian();
+        $antrian->nomor_antrian=$num_now;
+        $antrian->tgl_reservasi=$date_today;
+        $antrian->id_poli=$request->id_poli;
+        $antrian->id_pasien=$id_pasien;
+        $antrian->id_js_pembayaran=$request->id_js_pembayaran;
+        $antrian->save();
+
+        return redirect('booking');
     }
 
 
