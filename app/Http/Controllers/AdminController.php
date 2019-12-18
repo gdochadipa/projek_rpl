@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\admin;
 use App\rmh_sakit;
 use App\kecamatan;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -18,7 +20,8 @@ class AdminController extends Controller
     {
         $rmh_sakit = rmh_sakit::all();
         $kecamatan = kecamatan::all();
-        return view('admin.home',compact('rmh_sakit','kecamatan'));
+        $pegawai = DB::table('users')->where('id_tipe',2)->get();
+        return view('admin.home',compact('rmh_sakit','kecamatan','pegawai'));
     }
 
     /**

@@ -7,16 +7,16 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Sport Area</title>
+      <title>Dashboard Admin</title>
 
       <!-- Bootstrap -->
-      <link href="assets/css/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="assets/css/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+      <link href={{ asset('assets/css/vendors/bootstrap/dist/css/bootstrap.min.css') }} rel="stylesheet">
+      <link href={{ asset('assets/css/datatables/css/dataTables.bootstrap.css') }} rel="stylesheet">
       <!-- Font Awesome -->
-      <link href="assets/css/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href={{ asset('assets/css/vendors/font-awesome/css/font-awesome.min.css') }} rel="stylesheet">
       <!-- Custom Theme Style -->
-      <link href="assets/css/build/css/custom.min.css" rel="stylesheet">
-      <script src="assets/ckeditor/ckeditor.js"></script>
+      <link href={{ asset('assets/css/build/css/custom.min.css') }} rel="stylesheet">
+      <script src={{ asset('assets/ckeditor/ckeditor.js') }}></script>
     </head>
 
     <body class="nav-md">
@@ -59,7 +59,7 @@
     <div class="menu_section active">
                               <h3>General</h3>
                               <ul class="nav side-menu" style="">
-                                <li class=""><a href=""><i class="fa fa-home"></i> Dashboard</a>
+                                <li class=""><a href="/admin"><i class="fa fa-home"></i> Dashboard</a>
 
                                 </li>
                                 <li class=""><a href=""><i class="fa fa-home"></i>Booking Antrian</a>

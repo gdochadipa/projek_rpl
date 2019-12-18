@@ -45,6 +45,7 @@ Route::resource('admin','AdminController');
 
 Route::resource('rumahsakit','RmhSakitController');
 
+Route::resource('petugas','PegawaiController');
 
 Route::get('/login/pasien','LoginController@index');
 Route::post('/login/check','LoginController@check');
